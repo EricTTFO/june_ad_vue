@@ -1,5 +1,9 @@
 <template>
-  <div class="">Footer</div>
+  <div class="">
+    Ant Design Vue Pro
+    <br />
+    作者：Abel
+  </div>
 </template>
 
 <script>

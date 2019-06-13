@@ -1,5 +1,5 @@
 <template>
-  <div>stepForm</div>
+  <div class="">404</div>
 </template>
 
 <script>
