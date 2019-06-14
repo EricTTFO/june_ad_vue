@@ -9,7 +9,7 @@
         v-model="collapsed"
         width="256px"
       >
-        <div class="nav-theme-dark logo">Ant Design Vue Pro</div>
+        <div class="nav-theme-dark logo">Backstage</div>
         <SiderMenu :theme="NavTheme" />
       </a-layout-sider>
       <a-layout>
