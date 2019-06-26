@@ -1,9 +1,11 @@
 <template>
-  <div class="">step3</div>
+  <div class="">
+    操作成功 预计俩小时到账
+  </div>
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 
 <style></style>

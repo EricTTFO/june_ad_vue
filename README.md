@@ -1,5 +1,5 @@
 # june_ad_vue
-
+//mac环境下直接可以使用  wins下需要下载cross-env
 ## Project setup
 ```
 npm install

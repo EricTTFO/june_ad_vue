@@ -3,10 +3,10 @@
     <a-layout id="components-layout-demo-side" style="min-height: 100vh">
       <a-layout-sider
         v-if="NavLayout === 'left'"
+        v-model="collapsed"
         :theme="NavTheme"
         :trigger="null"
         collapsible
-        v-model="collapsed"
         width="256px"
       >
         <div class="nav-theme-dark logo">Backstage</div>
@@ -15,10 +15,11 @@
       <a-layout>
         <a-layout-header style="background: #fff; padding: 0">
           <a-icon
+            v-auth="['admin']"
             class="trigger"
             :type="collapsed ? 'menu-unfold' : 'menu-fold'"
             @click="collapsed = !collapsed"
-          ></a-icon>
+          />
           <Header />
         </a-layout-header>
         <a-layout-content style="margin: 0 16px">
@@ -29,36 +30,38 @@
         </a-layout-footer>
       </a-layout>
     </a-layout>
-    <SettingDrawer />
+    <Authorized :authority="['admin']">
+      <SettingDrawer />
+    </Authorized>
   </div>
 </template>
 
 <script>
-import Header from "./Header";
-import Footer from "./Footer";
-import SiderMenu from "./SiderMenu";
-import SettingDrawer from "../components/SettingDrawer";
+import Header from './Header'
+import Footer from './Footer'
+import SiderMenu from './SiderMenu'
+import SettingDrawer from '../components/SettingDrawer'
 export default {
-  data() {
-    return {
-      collapsed: false
-    };
-  },
-  computed: {
-    NavTheme() {
-      return this.$route.query.NavTheme || "dark";
-    },
-    NavLayout() {
-      return this.$route.query.NavLayout || "left";
-    }
-  },
   components: {
     Header,
     SiderMenu,
     Footer,
     SettingDrawer
+  },
+  data() {
+    return {
+      collapsed: false
+    }
+  },
+  computed: {
+    NavTheme() {
+      return this.$route.query.NavTheme || 'dark'
+    },
+    NavLayout() {
+      return this.$route.query.NavLayout || 'left'
+    }
   }
-};
+}
 </script>
 
 <style scoped>
