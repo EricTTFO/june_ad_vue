@@ -124,6 +124,28 @@ const router = new Router({
               ]
             }
           ]
+        },
+        // administrator
+        {
+          path: '/administrator',
+          name: '/administrator',
+          meta: {
+            icon: 'usergroup-add',
+            title: '超级管理员'
+          },
+          component: {
+            render: h => h('router-view')
+          },
+          children: [
+            {
+              path: '/administrator',
+              name: '/table',
+              meta: {
+                title: '用户列表'
+              },
+              component: () => import('./views/Administrator')
+            }
+          ]
         }
       ]
     },
@@ -139,14 +161,6 @@ const router = new Router({
       hideInMenu: true,
       component: NotFound
     }
-    // {
-    //   path: "/about",
-    //   name: "about",
-    //   // route level code-splitting
-    //   // this generates a separate chunk (about.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import("./views/About.vue")
-    // }
   ]
 })
 
