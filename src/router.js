@@ -139,11 +139,43 @@ const router = new Router({
           children: [
             {
               path: '/administrator',
-              name: '/table',
+              name: '/usermanagement',
               meta: {
                 title: '用户列表'
               },
               component: () => import('./views/Administrator')
+            },
+            {
+              path: '/administrator/viewusers',
+              name: '/viewusers',
+              meta: {
+                title: '查看用户'
+              },
+              component: () => import('./views/Administrator/Viewusers.vue')
+            },
+            {
+              path: '/administrator/newusers',
+              name: '/newusers',
+              meta: {
+                title: '新增用户'
+              },
+              component: () => import('./views/Administrator/Newusers.vue')
+            },
+            {
+              path: '/administrator/modifyusers',
+              name: '/modifyusers',
+              meta: {
+                title: '修改用户'
+              },
+              component: () => import('./views/Administrator/Modifyusers.vue')
+            },
+            {
+              path: '/administrator/modifyusers',
+              name: '/deleteusers',
+              meta: {
+                title: '删除用户'
+              },
+              component: () => import('./views/Administrator/Deleteusers.vue')
             }
           ]
         }
